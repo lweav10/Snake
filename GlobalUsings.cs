@@ -1,0 +1,1 @@
+﻿global using Grid = System.Collections.Generic.List<System.Collections.Generic.List<char>>;

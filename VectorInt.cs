@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Snake
+{
+    internal class VectorInt
+    {
+        internal VectorInt(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        internal int X { get; set; }
+        internal int Y { get; set; }
+
+        static internal VectorInt Add(VectorInt A, VectorInt B)
+        {
+            return new( A.X + B.X , A.Y + B.Y );
+        }
+    }
+}
