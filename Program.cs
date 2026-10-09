@@ -1,4 +1,6 @@
-﻿using System.Numerics;
+﻿//Main program
+
+using System.Numerics;
 using Snake;
 
 namespace Game

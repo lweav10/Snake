@@ -1,4 +1,6 @@
-﻿using System;
+﻿//A Vector that uses integers instead of floats, for movement and coordinates
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
