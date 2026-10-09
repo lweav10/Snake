@@ -9,6 +9,7 @@ namespace Game
 
         static void Main()
         {
+            //Pre loop initialisation
             List<VectorInt> Snake = [new(5,5)];
             Direction direction = Direction.Right;
             
@@ -20,6 +21,8 @@ namespace Game
             bool isRunning = true;
 
             Console.CursorVisible = false;
+
+            //Update Loop
             while (isRunning)
             {
 
@@ -28,7 +31,7 @@ namespace Game
                 Console.SetCursorPosition(0, 0);
                 Board = InitBoard(Board);
 
-                //Update code here
+                //Update code here ----------------------------------------------------------------
                 VectorInt move = new VectorInt(0, 0);
 
                 foreach (VectorInt coord in Snake)
@@ -36,20 +39,24 @@ namespace Game
                     Board[coord.Y][coord.X] = 'O';
                 }
 
+                
                 if (Frame % 5000 == 0)
                 {
                     move = direction switch
                     {
-                        Direction.Up => new(0, -1),
-                        Direction.Down => new(0, 1),
-                        Direction.Left => new(-1, 0),
-                        Direction.Right => new(1, 0),
-                        _ => new(0, 0),
+                        Direction.Up => VectorInt.Up,
+                        Direction.Down => VectorInt.Down,
+                        Direction.Left => VectorInt.Left,
+                        Direction.Right => VectorInt.Right,
+                        _ => VectorInt.Zero,
                     };
                 }
 
+
+
                 Snake[0] = VectorInt.Add(Snake[0],move);
 
+                //---------------------------------------------------------------------------------
 
                 //render frame
                 Renderer.Render(Board, Frame, debug: debug);

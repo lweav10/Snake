@@ -23,5 +23,11 @@ namespace Snake
         {
             return new( A.X + B.X , A.Y + B.Y );
         }
+
+        static internal VectorInt Up => new(0,-1);
+        static internal VectorInt Down => new(0, 1);
+        static internal VectorInt Left => new(-1, 0);
+        static internal VectorInt Right => new(1, 0);
+        static internal VectorInt Zero => new(0, 0);
     }
 }
